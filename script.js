@@ -3,6 +3,7 @@ const caixaPerguntas = document.querySelector(".caixa-perguntas");
 const caixaAlternativas = document.querySelector(".caixa-alternativas");
 const caixaResultado = document.querySelector(".caixa-resultado");
 const textoResultado = document.querySelector(".texto-resultado");
+const botaoJogarNovamente = document.querySelector(".novamente-btn");
 
 const perguntas = [
     {
@@ -135,14 +136,21 @@ function respostaSelecionada(opcaoSelecionada){
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
-    textoResultado.textContent = historiaFinal;
-    caixaAlternativas.textContent = "";
+        caixaPerguntas.textContent = "Em 2049...";
+        textoResultado.textContent = historiaFinal;
+        caixaAlternativas.textContent = "";
+        botaoJogarNovamente.addEventListener("click", jogaNovamente());
 }
-
 function aleatorio (lista){
         const posicao = Math.floor(Math.random()* lista.length);
         return lista[posicao];
+       mostraPergunta();
 }
 
-mostraPergunta();
+function jogaNovamente(){
+        atual = 0;
+        historiaFinal = "";
+        mostraPergunta();
+}
+
+
