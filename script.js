@@ -136,11 +136,13 @@ function respostaSelecionada(opcaoSelecionada){
 }
 
 function mostraResultado() {
-        caixaPerguntas.textContent = "Em 2049...";
-        textoResultado.textContent = historiaFinal;
-        caixaAlternativas.textContent = "";
-        botaoJogarNovamente.addEventListener("click", jogaNovamente());
+    caixaPerguntas.textContent = "Em 2049...";
+    textoResultado.textContent historiaFinal;
+    caixaAlternativas.textContent = "";
+    caixaResultado.classList.add("mostrar");
+    botaoJogarNovamente.addEventListener();
 }
+
 function aleatorio (lista){
         const posicao = Math.floor(Math.random()* lista.length);
         return lista[posicao];
@@ -148,9 +150,10 @@ function aleatorio (lista){
 }
 
 function jogaNovamente(){
-        atual = 0;
-        historiaFinal = "";
-        mostraPergunta();
+    atual = 0;
+    historiaFinal = "";
+    caixaResultado.classList.remove("mostrar");
+    mostraPergunta();
 }
 
 
